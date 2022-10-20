@@ -1,6 +1,6 @@
 namespace FlashCardsLibXUnitTests
 {
-    public class ComparisonTests
+    public class BootTests
     {
         [Fact]
         public void CheckRightPairComparison()
@@ -11,11 +11,11 @@ namespace FlashCardsLibXUnitTests
         [Fact]
         public void TestLoadLanguageLibs()
         {
-            Language language = new Language();
+            Language language = new Language("test", "test");
 
             language.LoadLanguageLibs();
 
-            
+
         }
     }
 }

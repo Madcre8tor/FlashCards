@@ -9,7 +9,7 @@
         public string Native { get; }
         public string Learning { get; }
 
-        public Language (string native, string learning)
+        public Language(string native, string learning)
         {
 
             Native = native;
@@ -32,7 +32,7 @@
         public void LoadLanguageLibs()
         {
             List<string> libs = ReadLanguageLibDirectory();
-            libs.ForEach(x => new LanguageLibrary())
+            libs.ForEach(x => new LanguageLibrary());
 
 
 

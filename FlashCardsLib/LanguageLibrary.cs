@@ -19,15 +19,13 @@
 
             foreach (string file in files)
             {
-                using StreamReader sr = new StreamReader(file)
+                using StreamReader sr = new StreamReader(file);
                 {
 
 
 
                 }
 
-
-                vocabulary[]
             }
 
 
