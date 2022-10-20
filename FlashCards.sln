@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCardsGUI", "FlashCardsGUI\FlashCardsGUI.csproj", "{FA7DE13E-E5C3-4B6F-AF3B-BB0CE5417899}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsLib", "FlashCardsLib\FlashCardsLib.csproj", "{39DB4FAC-90FA-4A3F-A3CE-2F4356E9CE75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsLibXUnitTests", "FlashCardsLibXUnitTests\FlashCardsLibXUnitTests.csproj", "{ED79331A-3DA2-44CD-B233-DD383E9552C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCardsGUI", "FlashCardsGUI\FlashCardsGUI.csproj", "{CAE66C02-0AB5-47C6-961D-C50322466107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FA7DE13E-E5C3-4B6F-AF3B-BB0CE5417899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA7DE13E-E5C3-4B6F-AF3B-BB0CE5417899}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA7DE13E-E5C3-4B6F-AF3B-BB0CE5417899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA7DE13E-E5C3-4B6F-AF3B-BB0CE5417899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39DB4FAC-90FA-4A3F-A3CE-2F4356E9CE75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39DB4FAC-90FA-4A3F-A3CE-2F4356E9CE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39DB4FAC-90FA-4A3F-A3CE-2F4356E9CE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39DB4FAC-90FA-4A3F-A3CE-2F4356E9CE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED79331A-3DA2-44CD-B233-DD383E9552C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED79331A-3DA2-44CD-B233-DD383E9552C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED79331A-3DA2-44CD-B233-DD383E9552C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED79331A-3DA2-44CD-B233-DD383E9552C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE66C02-0AB5-47C6-961D-C50322466107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE66C02-0AB5-47C6-961D-C50322466107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE66C02-0AB5-47C6-961D-C50322466107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE66C02-0AB5-47C6-961D-C50322466107}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
