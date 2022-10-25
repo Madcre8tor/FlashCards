@@ -1,23 +1,20 @@
-﻿using System.Data.SqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace FlashCardsLib.Database
 {
     public class DatabaseHandler
     {
-        static readonly string connectionString =
-            new SqlConnectionStringBuilder()
-            {
-                DataSource = Environment.GetEnvironmentVariable("FLASHCARDS_HOST", EnvironmentVariableTarget.User),
-                InitialCatalog = Environment.GetEnvironmentVariable("FLASHCARDS_DATABASE", EnvironmentVariableTarget.User),
-                UserID = Environment.GetEnvironmentVariable("FLASHCARDS_USER", EnvironmentVariableTarget.User),
-                Password = Environment.GetEnvironmentVariable("FLASHCARDS_PASSWORD", EnvironmentVariableTarget.User)
-            }.ConnectionString;
+        static readonly string connectionString = string.Format("Server={0}; database={1}; UID={2}; password={3}",
+            Environment.GetEnvironmentVariable("FLASHCARDS_HOST", EnvironmentVariableTarget.User),
+            Environment.GetEnvironmentVariable("FLASHCARDS_DATABASE", EnvironmentVariableTarget.User),
+            Environment.GetEnvironmentVariable("FLASHCARDS_USER", EnvironmentVariableTarget.User),
+            Environment.GetEnvironmentVariable("FLASHCARDS_PASSWORD", EnvironmentVariableTarget.User));
 
-        public SqlConnection Connection { get; }
+        public MySqlConnection Connection { get; }
 
         public DatabaseHandler()
         {
-            Connection = new SqlConnection(connectionString);
+            Connection = new MySqlConnection(connectionString);
         }
     }
 }
