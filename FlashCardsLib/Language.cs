@@ -32,7 +32,7 @@
         public void LoadLanguageLibs()
         {
             List<string> libs = ReadLanguageLibDirectory();
-            libs.ForEach(x => new LanguageLibrary());
+            libs.ForEach(x => new LanguageLibrary("blabla"));
 
 
 
