@@ -1,9 +1,138 @@
 ﻿<Application x:Class="FlashCardsGUI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:c="clr-namespace:FlashCardsGUI"
+             xmlns:vm="clr-namespace:FlashCardsGUI.ViewModels"
+             xmlns:lib="clr-namespace:FlashCardsLib;assembly=FlashCardsLib"
              xmlns:local="clr-namespace:FlashCardsGUI"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            
+            <!-- DEFAULT LANGUAGE OPTIONS -->
+            <x:Array Type="{x:Type sys:String}" x:Key="AppLanguages">
+                <sys:String>English</sys:String>
+                <sys:String>German</sys:String>
+                <sys:String>Spanish</sys:String>
+                <sys:String>French</sys:String>
+                <sys:String>Italian</sys:String>
+                <!-- new language -->
+            </x:Array>
+
+
+            <!-- Deprecated Dataprovider for enums
+            <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                        ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="l:Language"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+            -->
+
+            <!-- LanguageEnum -->
+            <ObjectDataProvider x:Key="PracticeLanguages" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="lib:Language" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>            
+  
+
+            <!-- DEFAULT DATA-TEMPLATES -->
+            <DataTemplate DataType="{x:Type lib:VocabularySet}" x:Key="VocabularySetTemplate">
+                <Border BorderThickness="2">
+                    <StackPanel
+                            CanVerticallyScroll="True"
+                            CanHorizontallyScroll="False">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0"
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                                   Text="Name"/>
+                            <TextBlock Grid.Column="0" Grid.Row="1"
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                                   Text="Native"/>
+                            <TextBlock Grid.Column="0" Grid.Row="2"
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                                   Text="Foreign"/>
+                            <TextBox Grid.Column="1" Grid.Row="0"
+                                 Grid.ColumnSpan="2"
+                                 HorizontalAlignment="Stretch" Margin="2"                                                                    
+                                 Text="{Binding VocabularySetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <ComboBox Grid.Column="1" Grid.Row="1"
+                                  Grid.ColumnSpan="2"
+                                  HorizontalAlignment="Stretch" Margin="2"
+                                  DataContext="{Binding}"
+                                  ItemsSource="{Binding Source={local:EnumBindingSource {x:Type lib:Language}}}"/>
+                            <ComboBox Grid.Column="1" Grid.Row="2"
+                                  Grid.ColumnSpan="2"
+                                  HorizontalAlignment="Stretch" Margin="2"
+                                  DataContext="{Binding}" 
+                                  ItemsSource="{Binding Source={local:EnumBindingSource {x:Type lib:Language}}}"/>
+                            
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type lib:Translation}" x:Key="TranslationTemplate">
+                <StackPanel 
+                        CanVerticallyScroll="True"
+                        CanHorizontallyScroll="False">
+                    <StackPanel>
+                        <DockPanel HorizontalAlignment="Left">
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                                       Text="Translation:"/>
+                            <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                                       Text="#1"/>
+                        </DockPanel>
+                    </StackPanel>
+                    <TextBlock HorizontalAlignment="Stretch" Margin="2"
+                               Text="{Binding WordNative.Word, Mode=OneWay}"/>
+                </StackPanel>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type lib:WordEntry}" x:Key="WordEntryTemplate">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0"
+                               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                               Text="Word:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1"
+                               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                               Text="Wordtype:"/>
+                    <TextBox Grid.Column="1" Grid.Row="0"
+                             Grid.ColumnSpan="2"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                             Text="{Binding Word, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="1"
+                              Grid.ColumnSpan="2"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
+                              Text="Type" 
+                              ItemsSource="{Binding Source={local:EnumBindingSource {x:Type lib:Language}}}"
+                              SelectedItem="{Binding Wordtype, Mode=TwoWay}"/>
+                </Grid>
+            </DataTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,5 +1,10 @@
 ﻿namespace FlashCardsLib
 {
+    /// <summary>
+    /// The Language referring to: Native Language -> the language the learner is familiar with
+    /// Foreign Language -> the language the learner is learning
+    /// Used for Language assigned to "Decks" "FlashCards" "WordEntries" "Translations" 
+    /// </summary>
     public enum Language
     {
         English = 0,

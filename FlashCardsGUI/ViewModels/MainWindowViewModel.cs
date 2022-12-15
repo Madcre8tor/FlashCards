@@ -10,66 +10,156 @@ using CommunityToolkit.Mvvm.Input;
 using FlashCardsLib;
 using System.Windows.Controls.Primitives;
 using System.Collections.ObjectModel;
+using FlashCardsGUI;
 
 namespace FlashCardsGUI.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject
     {
-        App App = (FlashCardsGUI.App)System.Windows.Application.Current;
-
-        //[ObservableProperty]
-        //private VocabularySet curSel_VocabularySet;
-
-        //[ObservableProperty]
-        //private Language curSel_VocabularySetLanguage;
-
-
         [ObservableProperty]
-        private ObservableCollection<VocabularySet> vocabularySets = new ObservableCollection<VocabularySet>();
+        private ObservableCollection<VocabularySet>? vocabularySetList;
+        [ObservableProperty]
+        private VocabularySet? vocabularySetSelected;
 
         //[ObservableProperty]
-        //NextProp
+        //private ObservableCollection<Translation>? translationList;
+        [ObservableProperty]
+        private Translation? translationSelected;
 
         public MainWindowViewModel()
         {
-            //Empty Constructor?
-        }
+            var coll = new ObservableCollection<VocabularySet>();
+            VocabularySetList = coll;
+            VocabularySetList.Add(
+                new VocabularySet()
+                {
+                    VocabularySetName = "New VocabularySet",
+                    NativeLanguage = Language.English,
+                    ForeignLanguage = Language.German,
+                    Translations = new ObservableCollection<Translation> {
+                        new Translation {
+                            LanguageNative = Language.English,
+                            LanguageForeign = Language.German,
+                            WordNative = new WordEntry("butterfly",
+                                new English.Noun("a", English.Numerus.Singular)),
+                            WordForeign = new WordEntry("schmetterling",
+                                new German.Noun("der", German.Numerus.Singular)),
+                        },
+                        new Translation {
+                            LanguageNative = Language.English,
+                            LanguageForeign = Language.German,
+                            WordNative = new WordEntry("cup",
+                                new English.Noun("a", English.Numerus.Singular)),
+                            WordForeign = new WordEntry("tasse",
+                                new German.Noun("die", German.Numerus.Singular)),
+                        },
+                        new Translation {
+                            LanguageNative = Language.English,
+                            LanguageForeign = Language.German,
+                            WordNative = new WordEntry("honor",
+                                new English.Noun("an", English.Numerus.Singular)),
+                            WordForeign = new WordEntry("ehre",
+                                new English.Noun("die", English.Numerus.Singular)),
+                        },
+                    }
+                });
+            VocabularySetList.Add(
+                new VocabularySet()
+                {
+                    VocabularySetName = "New VocabularySet",
+                    NativeLanguage = Language.English,
+                    ForeignLanguage = Language.German,
+                    Translations = new ObservableCollection<Translation> {
+                        new Translation {
+                            LanguageNative = Language.German,
+                            LanguageForeign = Language.English,
+                            WordNative = new WordEntry("schwimmen",
+                                new German.Verb(
+                                    German.Perspective.Infinite,
+                                    German.Numerus.None,
+                                    "schwimmen", "schwimmen", "schwamm", "geschwommen")),
+                            WordForeign = new WordEntry("swim",
+                                new English.Verb(
+                                    English.Perspective.Infinite,
+                                    English.Numerus.None,
+                                    "swim", "swim", "swimming", "swam", "swum"))
+                        },
+                        new Translation {
+                            LanguageNative = Language.German,
+                            LanguageForeign = Language.English,
+                            WordNative = new WordEntry("diskutieren",
+                                new German.Verb(
+                                    German.Perspective.Infinite,
+                                    German.Numerus.None,
+                                    "diskutieren", "diskutieren", "diskutierte", "diskutiert")),
+                            WordForeign = new WordEntry("discuss",
+                                new English.Verb(
+                                    English.Perspective.Infinite,
+                                    English.Numerus.None,
+                                    "discuss", "discuss", "discussing", "discussed", "discussed"))
+                        },
+                        new Translation {
+                            LanguageNative = Language.German,
+                            LanguageForeign = Language.English,
+                            WordNative = new WordEntry("versprechen",
+                                new German.Verb(
+                                    German.Perspective.Infinite,
+                                    German.Numerus.None,
+                                    "versprechen", "versprechen", "versprach", "versprochen")),
+                            WordForeign = new WordEntry("promise",
+                                new English.Verb(
+                                    English.Perspective.Infinite,
+                                    English.Numerus.None,
+                                    "promise", "promise", "promising", "promised", "promised"))
+                        }
+                    }
+                });
 
-          
-
-
-
-        public void DoSomething() 
-        {
-           
+            //Rest of Constructor
         }
 
         [RelayCommand]
-        private void VocabularyEntry_Add()
+        private void VocabularySet_Add()
+        {
+            var set = new VocabularySet();
+            if (VocabularySetList != null)
+            {
+                VocabularySetList.Add(set);
+            }
+        }
+
+        [RelayCommand]
+        private void VocabularySet_Remove()
         {
 
         }
 
         [RelayCommand]
-        private void VocabularyEntry_Remove()
+        private void VocabularySet_Rename()
         {
 
         }
 
         [RelayCommand]
-        private void VocabularyEntry_Rename()
+        private void VocabularySet_Options()
         {
 
         }
 
         [RelayCommand]
-        private void VocabularyEntry_Options()
+        private void VocabularySet_Upload()
         {
 
         }
 
         [RelayCommand]
-        private void VocabularyEntry_Upload()
+        private void Translation_Add()
+        {
+            
+        }
+
+        [RelayCommand]
+        private void Translation_Remove()
         {
 
         }

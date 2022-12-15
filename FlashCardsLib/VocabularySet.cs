@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.Collections.ObjectModel;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace FlashCardsLib
@@ -7,9 +8,10 @@ namespace FlashCardsLib
     [XmlInclude(typeof(VocabularySet))]
     public class VocabularySet
     {
-        public string VocabularySetName { get; private set; } = "New VocabularySet";
-
-        public List<List<(Language, WordEntry)>> Translations = new List<List<(Language, WordEntry)>>();
+        public string VocabularySetName { get; set; } = "New VocabularySet";
+        public Language NativeLanguage { get; set; }
+        public Language ForeignLanguage { get; set; }        
+        public ObservableCollection<Translation> Translations { get; set; } = new ObservableCollection<Translation>(); 
 
         public VocabularySet ()
         {
