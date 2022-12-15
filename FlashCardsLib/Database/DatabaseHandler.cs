@@ -1,20 +1,20 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 
 namespace FlashCardsLib.Database
 {
     public class DatabaseHandler
     {
-        static readonly string connectionString = string.Format("Server={0}; database={1}; UID={2}; password={3}",
-            Environment.GetEnvironmentVariable("FLASHCARDS_HOST", EnvironmentVariableTarget.User),
-            Environment.GetEnvironmentVariable("FLASHCARDS_DATABASE", EnvironmentVariableTarget.User),
-            Environment.GetEnvironmentVariable("FLASHCARDS_USER", EnvironmentVariableTarget.User),
-            Environment.GetEnvironmentVariable("FLASHCARDS_PASSWORD", EnvironmentVariableTarget.User));
+        static readonly string connectionString = 
+            @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FlashWordsDB;
+            Integrated Security=True;Connect Timeout=30;Encrypt=False;
+            TrustServerCertificate=False;ApplicationIntent=ReadWrite;
+            MultiSubnetFailover=False";
 
-        public MySqlConnection Connection { get; }
+        public SqlConnection Connection { get; }
 
         public DatabaseHandler()
         {
-            Connection = new MySqlConnection(connectionString);
+            Connection = new SqlConnection(connectionString);
         }
     }
 }

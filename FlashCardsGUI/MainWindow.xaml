@@ -4,9 +4,87 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlashCardsGUI"
+        xmlns:vm="clr-namespace:FlashCardsGUI.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+        Title="MainWindow" Height="600" Width="1000" MinHeight="450" MinWidth="750"
+        FontSize="12" FontFamily="Minion">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="6"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="30*" MinHeight="60"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="6"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="1"
+                   Name="DebugField" Text="Default Text" AutomationProperties.HelpText="Debug Output"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Grid.RowSpan="4" HorizontalAlignment="Right" MinWidth="70" >
+            <Button Margin="4,4,4,2"
+                    Name="New" Content="New"
+                    Command="{Binding VocabularyEntry_AddCommand}"/>
+
+            <Button Margin="4,4,4,2"
+                    Name="Rename" Content="Rename" IsEnabled="False"
+                    Click="Rename_Click"/>
+
+            <Button Margin="4,4,4,2"
+                    Name="Options" Content="Options"
+                    Click="Options_Click"/>
+
+            <Button Margin="4,4,4,2"
+                    Name="Upload" Content="Upload"
+                    Click="Upload_Click"/>
+
+            <StackPanel Grid.Column="1" Grid.Row="2"
+                        Margin="4,4,4,2">
+                <TextBlock Grid.Column="2" Grid.Row="1" Margin="0,0,0,1"
+                           HorizontalAlignment="Left"
+                           Name="hi" Text="Language:"
+                           Focusable="False" />
+                <ComboBox HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="16"
+                          SelectedItem="{Binding VocabularySetLanguage, Mode=TwoWay}"
+                          Name="LanguageDropDown">
+
+                </ComboBox>
+
+            </StackPanel>
+
+        </StackPanel>
+
+
+        <ListBox Grid.Column="2" Grid.Row="2" Margin="4,4,4,4"
+                 Grid.ColumnSpan="2" Grid.RowSpan="4"
+                 Name="VocabularyEntryDisplay"
+                 SelectionMode="Extended"
+                 SelectionChanged="VocabularyEntryDisplay_SelectionChanged"
+                 />
+        <ComboBox Name="VocabularyEntryBox" DisplayMemberPath="VocabularySetName"
+                  
+                  SelectionChanged="VocabularyEntryDisplay_SelectionChanged">
+            
+        </ComboBox>
+
+
+
+
     </Grid>
 </Window>

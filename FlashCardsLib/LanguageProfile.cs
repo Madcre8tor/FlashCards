@@ -1,6 +1,6 @@
 ﻿namespace FlashCardsLib
 {
-    public class Language
+    public class LanguageProfile
     {
         public readonly string LanguageLibPath = "LanguageLib";
 
@@ -9,7 +9,7 @@
         public string Native { get; }
         public string Learning { get; }
 
-        public Language(string native, string learning)
+        public LanguageProfile(string native, string learning)
         {
 
             Native = native;
