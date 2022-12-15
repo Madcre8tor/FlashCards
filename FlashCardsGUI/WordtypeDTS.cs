@@ -15,7 +15,7 @@ namespace FlashCardsGUI
             {
                 IWordtype wordtype = item as IWordtype;
 
-                if (wordtype.Priority == 1)
+                if (wordtype.Language == )
                     return
                         element.FindResource("importantTaskTemplate") as DataTemplate;
                 else
@@ -25,5 +25,24 @@ namespace FlashCardsGUI
 
             return null;
         }
+
+
+
+        public DataTemplate SelectedEnglishDataTemplate(IWordtype wordtype, FrameworkElement element)
+        {
+            if (wordtype is English.Noun)
+
+                var template = element.FindResource("English+Noun") as DataTemplate;
+            return template;
+        }
+
+        public DataTemplate SelectGermanDataTemplate(IWordtype wordtype)
+        {
+
+
+        }
+
+
+
     }
 }

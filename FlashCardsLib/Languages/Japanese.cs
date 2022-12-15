@@ -10,8 +10,13 @@ namespace FlashCardsLib
         /*  alternatively:            
             にっぽんご
         */
-
-
+        public enum Writing
+        {
+            Kanji = 1,
+            Hiragana = 2,
+            Katakana = 3,
+            Romaji = 4,
+        }
 
         public enum Verbtype
         {
@@ -24,26 +29,58 @@ namespace FlashCardsLib
 
         //public enum Perspective (What forms exist in Japanese?)
 
-        public class Noun
-        {
+        
 
-        }
+    }
 
-        public class Verb
-        {
+    public class Noun : IWordtype, IJapaneseWriting
+    {
+        public string Typename => typeof(Noun).Name;
+        public Language Language => Japanese.LANGUAGE;
 
-        }
+        public string? Kanji { get; set; }
+        public string? Hiragana { get; set; }
+        public string? Katakana { get; set; }
+        public Japanese.Writing? PreferredWriting { get; set; }
 
-        public class Adjective
-        {
+        // mizu, ringo, sushi
+    }
 
-        }
+    public class Verb : IWordtype, IJapaneseWriting
+    {
+        public string Typename => typeof(Verb).Name;
+        public Language Language => Japanese.LANGUAGE;
 
-        public class Particle
-        {
+        public string? Kanji { get; set; }
+        public string? Hiragana { get; set; }
+        public string? Katakana { get; set; }
+        public Japanese.Writing? PreferredWriting { get; set; }
+        // ageru, taberu, 
+    }
 
-        }
+    public class Adjective : IWordtype, IJapaneseWriting
+    {
+        public string Typename => typeof(Adjective).Name;
+        public Language Language => Japanese.LANGUAGE;
 
+        public string? Kanji { get; set; }
+        public string? Hiragana { get; set; }
+        public string? Katakana { get; set; }
+        public Japanese.Writing? PreferredWriting { get; set; }
+        // kawaii, aoi, 
+    }
+
+    public class Particle : IWordtype, IJapaneseWriting
+    {
+        public string Typename => typeof(Particle).Name;
+        public Language Language => Japanese.LANGUAGE;
+
+        public string? Kanji { get; set; }
+        public string? Hiragana { get; set; }
+        public string? Katakana { get; set; }
+        public Japanese.Writing? PreferredWriting { get; set; }
+        // ha, wo, ni, no
+        // 
     }
 
 

@@ -3,14 +3,6 @@ using System.Runtime.CompilerServices;
 
 namespace FlashCardsLib
 {
-
-    public class Wordtype : IWordtype
-    {
-        public string Typename { get => typeof(Wordtype).ToString(); }
-
-        public Wordtype() { }
-    }
-
     public interface IWordtype
     {
         public string Typename { get; }

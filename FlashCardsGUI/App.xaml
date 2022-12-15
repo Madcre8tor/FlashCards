@@ -10,7 +10,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
+
             <!-- DEFAULT LANGUAGE OPTIONS -->
             <x:Array Type="{x:Type sys:String}" x:Key="AppLanguages">
                 <sys:String>English</sys:String>
@@ -37,8 +37,8 @@
                 <ObjectDataProvider.MethodParameters>
                     <x:Type TypeName="lib:Language" />
                 </ObjectDataProvider.MethodParameters>
-            </ObjectDataProvider>            
-  
+            </ObjectDataProvider>
+
 
             <!-- DEFAULT DATA-TEMPLATES -->
             <DataTemplate DataType="{x:Type lib:VocabularySet}" x:Key="VocabularySetTemplate">
@@ -80,7 +80,7 @@
                                   HorizontalAlignment="Stretch" Margin="2"
                                   DataContext="{Binding}" 
                                   ItemsSource="{Binding Source={local:EnumBindingSource {x:Type lib:Language}}}"/>
-                            
+
                         </Grid>
                     </StackPanel>
                 </Border>
@@ -132,6 +132,15 @@
                               SelectedItem="{Binding Wordtype, Mode=TwoWay}"/>
                 </Grid>
             </DataTemplate>
+
+            <DataTemplate DataType="lib:English+Noun" x:Key="EnglishNounTemplate">
+                               
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Static lib:English+Noun}">
+                
+            </DataTemplate>
+
 
         </ResourceDictionary>
     </Application.Resources>
