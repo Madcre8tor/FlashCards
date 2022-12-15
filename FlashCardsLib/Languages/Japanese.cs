@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.Contracts;
 
-namespace FlashCardsLib
+namespace FlashCardsLib.Japanese
 {
     public class Japanese : ILanguage
     {

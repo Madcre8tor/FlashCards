@@ -6,6 +6,6 @@
         string? Hiragana { get; set; }
         string? Katakana { get; set; }
 
-        public Japanese.Writing? PreferredWriting { get; set; }
+        public FlashCardsLib.Japanese.Japanese.Writing? PreferredWriting { get; set; }
     }
 }

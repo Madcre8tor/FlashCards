@@ -12,6 +12,10 @@ using System.Windows.Controls.Primitives;
 using System.Collections.ObjectModel;
 using FlashCardsGUI;
 
+using FlashCardsLib.English;
+using FlashCardsLib.German;
+using FlashCardsLib.Japanese;
+
 namespace FlashCardsGUI.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject
@@ -41,25 +45,25 @@ namespace FlashCardsGUI.ViewModels
                             LanguageNative = Language.English,
                             LanguageForeign = Language.German,
                             WordNative = new WordEntry("butterfly",
-                                new English.Noun("a", English.Numerus.Singular)),
+                                new FlashCardsLib.English.Noun("a", English.Numerus.Singular)),
                             WordForeign = new WordEntry("schmetterling",
-                                new German.Noun("der", German.Numerus.Singular)),
+                                new FlashCardsLib.German.Noun("der", German.Numerus.Singular)),
                         },
                         new Translation {
                             LanguageNative = Language.English,
                             LanguageForeign = Language.German,
                             WordNative = new WordEntry("cup",
-                                new English.Noun("a", English.Numerus.Singular)),
+                                new FlashCardsLib.English.Noun("a", English.Numerus.Singular)),
                             WordForeign = new WordEntry("tasse",
-                                new German.Noun("die", German.Numerus.Singular)),
+                                new FlashCardsLib.German.Noun("die", German.Numerus.Singular)),
                         },
                         new Translation {
                             LanguageNative = Language.English,
                             LanguageForeign = Language.German,
                             WordNative = new WordEntry("honor",
-                                new English.Noun("an", English.Numerus.Singular)),
+                                new FlashCardsLib.English.Noun("an", English.Numerus.Singular)),
                             WordForeign = new WordEntry("ehre",
-                                new English.Noun("die", English.Numerus.Singular)),
+                                new FlashCardsLib.English.Noun("die", English.Numerus.Singular)),
                         },
                     }
                 });
@@ -74,12 +78,12 @@ namespace FlashCardsGUI.ViewModels
                             LanguageNative = Language.German,
                             LanguageForeign = Language.English,
                             WordNative = new WordEntry("schwimmen",
-                                new German.Verb(
+                                new FlashCardsLib.German.Verb(
                                     German.Perspective.Infinite,
                                     German.Numerus.None,
                                     "schwimmen", "schwimmen", "schwamm", "geschwommen")),
                             WordForeign = new WordEntry("swim",
-                                new English.Verb(
+                                new FlashCardsLib.English.Verb(
                                     English.Perspective.Infinite,
                                     English.Numerus.None,
                                     "swim", "swim", "swimming", "swam", "swum"))
@@ -88,12 +92,12 @@ namespace FlashCardsGUI.ViewModels
                             LanguageNative = Language.German,
                             LanguageForeign = Language.English,
                             WordNative = new WordEntry("diskutieren",
-                                new German.Verb(
+                                new FlashCardsLib.German.Verb(
                                     German.Perspective.Infinite,
                                     German.Numerus.None,
                                     "diskutieren", "diskutieren", "diskutierte", "diskutiert")),
                             WordForeign = new WordEntry("discuss",
-                                new English.Verb(
+                                new FlashCardsLib.English.Verb(
                                     English.Perspective.Infinite,
                                     English.Numerus.None,
                                     "discuss", "discuss", "discussing", "discussed", "discussed"))
@@ -102,12 +106,12 @@ namespace FlashCardsGUI.ViewModels
                             LanguageNative = Language.German,
                             LanguageForeign = Language.English,
                             WordNative = new WordEntry("versprechen",
-                                new German.Verb(
+                                new FlashCardsLib.German.Verb(
                                     German.Perspective.Infinite,
                                     German.Numerus.None,
                                     "versprechen", "versprechen", "versprach", "versprochen")),
                             WordForeign = new WordEntry("promise",
-                                new English.Verb(
+                                new FlashCardsLib.English.Verb(
                                     English.Perspective.Infinite,
                                     English.Numerus.None,
                                     "promise", "promise", "promising", "promised", "promised"))

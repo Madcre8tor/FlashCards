@@ -27,10 +27,10 @@ namespace FlashCardsLib.German
     public class Noun : IWordtype
     {
         public string Typename => typeof(Noun).Name;
-        public Language Language => LANGUAGE;
+        public Language Language => German.LANGUAGE;
 
         public string Article;
-        public Numerus Numerus;
+        public German.Numerus Numerus;
 
         public Noun(string article, German.Numerus numerus)
         {
@@ -42,7 +42,7 @@ namespace FlashCardsLib.German
     public class Verb : IWordtype
     {
         public string Typename => typeof(Verb).Name;
-        public Language Language => LANGUAGE;
+        public Language Language => German.LANGUAGE;
 
         public German.Perspective Perspective;          // Infinitiv, Erste Person, Zweite Person, Dritte Person
         public German.Numerus Numerus;                  // Menge(Unzählbar), Singular, Plural
@@ -53,8 +53,8 @@ namespace FlashCardsLib.German
         public string? Perfect;          // gegangen
 
         public Verb(
-            Perspective perspective,
-            Numerus numerus,
+            German.Perspective perspective,
+            German.Numerus numerus,
             string? infinite,
             string? present,
             string? past,

@@ -4,41 +4,15 @@
              xmlns:c="clr-namespace:FlashCardsGUI"
              xmlns:vm="clr-namespace:FlashCardsGUI.ViewModels"
              xmlns:lib="clr-namespace:FlashCardsLib;assembly=FlashCardsLib"
+             
+             xmlns:libEN="clr-namespace:FlashCardsLib.English;assembly=FlashCardsLib"
+
              xmlns:local="clr-namespace:FlashCardsGUI"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-
-            <!-- DEFAULT LANGUAGE OPTIONS -->
-            <x:Array Type="{x:Type sys:String}" x:Key="AppLanguages">
-                <sys:String>English</sys:String>
-                <sys:String>German</sys:String>
-                <sys:String>Spanish</sys:String>
-                <sys:String>French</sys:String>
-                <sys:String>Italian</sys:String>
-                <!-- new language -->
-            </x:Array>
-
-
-            <!-- Deprecated Dataprovider for enums
-            <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
-                        ObjectType="{x:Type sys:Enum}">
-                <ObjectDataProvider.MethodParameters>
-                    <x:Type TypeName="l:Language"/>
-                </ObjectDataProvider.MethodParameters>
-            </ObjectDataProvider>
-            -->
-
-            <!-- LanguageEnum -->
-            <ObjectDataProvider x:Key="PracticeLanguages" MethodName="GetValues"
-                            ObjectType="{x:Type sys:Enum}">
-                <ObjectDataProvider.MethodParameters>
-                    <x:Type TypeName="lib:Language" />
-                </ObjectDataProvider.MethodParameters>
-            </ObjectDataProvider>
-
 
             <!-- DEFAULT DATA-TEMPLATES -->
             <DataTemplate DataType="{x:Type lib:VocabularySet}" x:Key="VocabularySetTemplate">
@@ -133,15 +107,21 @@
                 </Grid>
             </DataTemplate>
 
-            <DataTemplate DataType="lib:English+Noun" x:Key="EnglishNounTemplate">
-                               
-            </DataTemplate>
+            <!--                                 -->
+            <!-- LANGUAGE WORDTYPE DATATEMPLATES -->
+            <!--                                 -->
 
-            <DataTemplate DataType="{x:Static lib:English+Noun}">
+            <!-- ENGLISH WORDTYPE DATATEMPLATES  -->
+
+            <DataTemplate DataType="{x:Type libEN:Noun}" x:Key="EnglishNounTemplate">   
+                
                 
             </DataTemplate>
-
+            
+                
 
         </ResourceDictionary>
+
+        
     </Application.Resources>
 </Application>

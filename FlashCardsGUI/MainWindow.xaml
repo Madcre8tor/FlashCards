@@ -14,9 +14,11 @@
         Title="MainWindow" Width="1000" Height="600"
         FontSize="12" FontFamily="Minion">
 
+    <!--
     <Window.Resources>
-
+        <local:WordtypeDTS x:Key="WordtypeDataTemplateSelector"/>
     </Window.Resources>
+    -->
 
     <!--
     <Window.DataContext>

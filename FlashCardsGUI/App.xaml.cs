@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Windows;
+using FlashCardsLib.English;
+using FlashCardsLib.German;
+using FlashCardsLib.Japanese;
 
 
 namespace FlashCardsGUI
