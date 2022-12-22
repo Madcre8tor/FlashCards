@@ -4,11 +4,6 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace FlashCardsLibXUnitTests
 {
-    public class Apple { public int count = 10; }
-
-    public struct Banana { public int count = 32; public Banana() { } }
-
-
     public class DatabaseTests
     {
         [Fact]
