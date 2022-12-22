@@ -9,6 +9,14 @@ namespace FlashCardsWebApp
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication("auth").AddCookie("auth", options =>
+            {
+                options.Cookie.Name = "auth";
+
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout";
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -24,6 +32,7 @@ namespace FlashCardsWebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapRazorPages();
