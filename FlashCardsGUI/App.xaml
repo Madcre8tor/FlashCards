@@ -6,6 +6,8 @@
              xmlns:lib="clr-namespace:FlashCardsLib;assembly=FlashCardsLib"
              
              xmlns:libEN="clr-namespace:FlashCardsLib.English;assembly=FlashCardsLib"
+             xmlns:libDE="clr-namespace:FlashCardsLib.German;assembly=FlashCardsLib"
+             xmlns:libJA="clr-namespace:FlashCardsLib.Japanese;assembly=FlashCardsLib"
 
              xmlns:local="clr-namespace:FlashCardsGUI"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -13,7 +15,13 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-
+            <!-- CONSTANT OBJECTDATAPROVIDERS -->
+            <ObjectDataProvider>
+                
+            </ObjectDataProvider>
+            
+            
+            
             <!-- DEFAULT DATA-TEMPLATES -->
             <DataTemplate DataType="{x:Type lib:VocabularySet}" x:Key="VocabularySetTemplate">
                 <Border BorderThickness="2">
@@ -102,8 +110,12 @@
                               Grid.ColumnSpan="2"
                               HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="2"
                               Text="Type" 
-                              ItemsSource="{Binding Source={local:EnumBindingSource {x:Type lib:Language}}}"
+                              ItemsSource="{Binding Source={x:Type lib:IWordtype}}"
                               SelectedItem="{Binding Wordtype, Mode=TwoWay}"/>
+                    <ContentControl>
+                        
+                    </ContentControl>
+                    
                 </Grid>
             </DataTemplate>
 
@@ -113,12 +125,40 @@
 
             <!-- ENGLISH WORDTYPE DATATEMPLATES  -->
 
-            <DataTemplate DataType="{x:Type libEN:Noun}" x:Key="EnglishNounTemplate">   
+            <DataTemplate DataType="{x:Type libEN:Noun}" x:Key="EnglishNounTemplate">
                 
-                
+
             </DataTemplate>
-            
-                
+            <DataTemplate DataType="{x:Type libEN:Verb}" x:Key="EnglishVerbTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Adjective}" x:Key="EnglishAdjectiveTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Article}" x:Key="EnglishArticleTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Pronoun}" x:Key="EnglishPronounTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Determiner}" x:Key="EnglishDeterminerTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Adverb}" x:Key="EnglishAdverbTemplate">
+
+
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type libEN:Preposition}" x:Key="EnglishPrepositionTemplate">
+
+
+            </DataTemplate>
+
+
 
         </ResourceDictionary>
 

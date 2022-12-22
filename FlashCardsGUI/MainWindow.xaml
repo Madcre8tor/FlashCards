@@ -14,11 +14,14 @@
         Title="MainWindow" Width="1000" Height="600"
         FontSize="12" FontFamily="Minion">
 
-    <!--
+
     <Window.Resources>
-        <local:WordtypeDTS x:Key="WordtypeDataTemplateSelector"/>
+        <!-- <local:WordtypeDTS x:Key="WordtypeDataTemplateSelector"/> -->
+
+        <sys::IWordtype x:Key="fixedValue"/>
+
     </Window.Resources>
-    -->
+
 
     <!--
     <Window.DataContext>

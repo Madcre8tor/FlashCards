@@ -2,6 +2,31 @@ namespace FlashCardsLibXUnitTests
 {
     public class StartupTests
     {
+
+        [Fact]
+        public void LoadAllAssemblies()
+        {
+            var lang = AppConstants.SUPPORTED_LANGUAGES;
+            Assert.Equal(6, lang.Length);
+        }
+
+        public void LoadAllTypesImplementingIWordtype()
+        {
+
+        }
+
+        public void LoadAllTypesImplementingILanguage()
+        {
+
+        }
+
+
+
+
+
+
+
+
         [Fact]
         public void CheckRightPairComparison()
         {

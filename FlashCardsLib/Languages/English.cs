@@ -95,7 +95,8 @@
     {
         public string Typename => typeof(Pronoun).Name;
         public Language Language => English.LANGUAGE;
-    }             // it, they, those, mine, his
+        // it, they, those, mine, his
+    }
 
     public class Determiner : IWordtype
     {
