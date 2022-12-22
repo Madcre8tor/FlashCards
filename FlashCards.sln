@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsLibXUnitTests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsGUI", "FlashCardsGUI\FlashCardsGUI.csproj", "{CAE66C02-0AB5-47C6-961D-C50322466107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCardsWebApp", "FlashCardsWebApp\FlashCardsWebApp.csproj", "{E34C4B97-75B5-4B63-9A54-368FCD340B63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsWebApp", "FlashCardsWebApp\FlashCardsWebApp.csproj", "{E34C4B97-75B5-4B63-9A54-368FCD340B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
