@@ -16,9 +16,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- CONSTANT OBJECTDATAPROVIDERS -->
-            <ObjectDataProvider>
-                
-            </ObjectDataProvider>
+            
             
             
             

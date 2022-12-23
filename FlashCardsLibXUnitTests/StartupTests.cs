@@ -2,7 +2,6 @@ namespace FlashCardsLibXUnitTests
 {
     public class StartupTests
     {
-
         [Fact]
         public void LoadAllAssemblies()
         {
@@ -10,11 +9,13 @@ namespace FlashCardsLibXUnitTests
             Assert.Equal(6, lang.Length);
         }
 
+        [Fact]
         public void LoadAllTypesImplementingIWordtype()
         {
 
         }
 
+        [Fact]
         public void LoadAllTypesImplementingILanguage()
         {
 
