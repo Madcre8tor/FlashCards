@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsLibXUnitTests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashCardsGUI", "FlashCardsGUI\FlashCardsGUI.csproj", "{CAE66C02-0AB5-47C6-961D-C50322466107}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashCardsWebApp", "FlashCardsWebApp\FlashCardsWebApp.csproj", "{ECB88BDA-19DB-4E13-8805-D88D7F46F053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CAE66C02-0AB5-47C6-961D-C50322466107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAE66C02-0AB5-47C6-961D-C50322466107}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAE66C02-0AB5-47C6-961D-C50322466107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB88BDA-19DB-4E13-8805-D88D7F46F053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB88BDA-19DB-4E13-8805-D88D7F46F053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB88BDA-19DB-4E13-8805-D88D7F46F053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB88BDA-19DB-4E13-8805-D88D7F46F053}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
