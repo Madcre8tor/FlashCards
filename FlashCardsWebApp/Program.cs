@@ -1,5 +1,7 @@
 using FlashCardsWebApp.Data;
+using FlashCardsWebApp.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace FlashCardsWebApp
@@ -10,6 +12,9 @@ namespace FlashCardsWebApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Configure app secrets
+            var sendGridKey = builder.Configuration["SendGridKey"];
+
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("IdentityConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -19,6 +24,9 @@ namespace FlashCardsWebApp
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
+            builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
             var app = builder.Build();
 
