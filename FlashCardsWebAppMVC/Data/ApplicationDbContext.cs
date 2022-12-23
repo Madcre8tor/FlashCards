@@ -1,8 +1,8 @@
-﻿using FlashCardsWebAppMVC.Models;
+﻿using FlashCardsWebApp.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace FlashCardsWebAppMVC.Data
+namespace FlashCardsWebApp.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

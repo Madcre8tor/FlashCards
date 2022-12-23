@@ -1,4 +1,4 @@
-﻿namespace FlashCardsWebAppMVC.Models
+﻿namespace FlashCardsWebApp.Models
 {
     public class Employee
     {

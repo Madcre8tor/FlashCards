@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-FlashCardsWebAppMVC-d1759fdd-a04c-4d20-89bb-9606fd06988a</UserSecretsId>
+    <UserSecretsId>aspnet-FlashCardsWebApp-d1759fdd-a04c-4d20-89bb-9606fd06988a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

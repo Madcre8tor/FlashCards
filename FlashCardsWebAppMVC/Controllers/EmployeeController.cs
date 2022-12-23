@@ -1,7 +1,7 @@
-﻿using FlashCardsWebAppMVC.Data;
+﻿using FlashCardsWebApp.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FlashCardsWebAppMVC.Controllers
+namespace FlashCardsWebApp.Controllers
 {
     public class EmployeeController : Controller
     {

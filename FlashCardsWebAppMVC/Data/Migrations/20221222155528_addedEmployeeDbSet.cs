@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace FlashCardsWebAppMVC.Data.Migrations
+namespace FlashCardsWebApp.Data.Migrations
 {
     public partial class addedEmployeeDbSet : Migration
     {

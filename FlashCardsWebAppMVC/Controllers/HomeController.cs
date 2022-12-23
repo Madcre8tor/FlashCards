@@ -1,8 +1,8 @@
-﻿using FlashCardsWebAppMVC.Models;
+﻿using FlashCardsWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace FlashCardsWebAppMVC.Controllers
+namespace FlashCardsWebApp.Controllers
 {
     public class HomeController : Controller
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace FlashCardsWebAppMVC.Data.Migrations
+namespace FlashCardsWebApp.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
