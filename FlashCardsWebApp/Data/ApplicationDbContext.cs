@@ -8,7 +8,7 @@ namespace FlashCardsWebApp.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         //Unsere "DB Tabellen"
-        public Karteikarte Karteikarten { get; set; }
+        public DbSet<Karteikarte> Karteikarten { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
