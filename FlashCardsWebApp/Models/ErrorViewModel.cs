@@ -6,4 +6,6 @@ namespace FlashCardsWebApp.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
+
+
 }

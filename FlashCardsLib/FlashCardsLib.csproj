@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LanguageLib\English\Vocabulary\"/>
+    <Folder Include="LanguageLib\English\Vocabulary\" />
   </ItemGroup>
 
   <ItemGroup>
