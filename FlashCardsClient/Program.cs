@@ -3,6 +3,9 @@ using FlashCardsWebApp.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Sockets;
+using System.Net;
+using System.Text;
 
 namespace FlashCardsWebApp
 {
@@ -24,6 +27,9 @@ namespace FlashCardsWebApp
 
             var sendGridKey = builder.Configuration["SendGridKey"];
             builder.Services.AddTransient<IEmailSender, EmailSender>();
+
+            builder.Services.AddHostedService<BootStrapper>();
+
             builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
             var app = builder.Build();
@@ -53,6 +59,35 @@ namespace FlashCardsWebApp
             app.MapRazorPages();
 
             app.Run();
+
+        }
+
+        public class BootStrapper : IHostedService
+        {
+            IPAddress ipAddress = IPAddress.Parse("108.143.200.32");
+            int port = 3000;
+
+            public async Task StartAsync(CancellationToken cancellationToken)
+            {
+                var ipEndPoint = new IPEndPoint(ipAddress, port);
+
+                using TcpClient client = new();
+                await client.ConnectAsync(ipEndPoint);
+                await using NetworkStream stream = client.GetStream();
+
+                var buffer = new byte[1_024];
+                int received = await stream.ReadAsync(buffer);
+
+                var message = Encoding.UTF8.GetString(buffer, 0, received);
+                Console.WriteLine($"Message received: \"{message}\"");
+
+                //return Task.CompletedTask;
+            }
+
+            public Task StopAsync(CancellationToken cancellationToken)
+            {
+                return Task.CompletedTask;
+            }
         }
     }
 }

@@ -4,11 +4,11 @@ namespace FlashCardsLib
 {
     public static class AppConstants
     {
-        public readonly static Language[] SUPPORTED_LANGUAGES = DetermineSupportedLanguages();
-        public readonly static IWordtype[] SUPPORTED_WORDTYPES = DetermineSupportedWordtypes();
+        public readonly static Language[] SupportedLanguages = DetermineSupportedLanguages();
+        public readonly static IWordtype[] SupportedWordtypes = DetermineSupportedWordtypes();
 
-        public const Language PRIMARY_DEFAULT_LANGUAGE = Language.English;
-        public const Language SECONDARY_DEFAULT_LANGUAGE = Language.German;
+        public readonly static string PrimaryDefaultLangauge = "English";
+        public readonly static Language SecondaryDefaultLanguage = Language.German;
 
         private static void DetermineSupportedLanguagesInculdingOtherAssemblies()
         {
@@ -19,20 +19,21 @@ namespace FlashCardsLib
 
         private static Language[] DetermineSupportedLanguages()
         {
-            var allLanguageTypes = (ILanguage[])NonAbstractTypesImplementingInterface(typeof(ILanguage));
+            var allLanguageTypes = NonAbstractTypesImplementingInterface(typeof(ILanguage));
             List<Language> languageList = new List<Language>();
 
-            foreach (ILanguage langType in allLanguageTypes) {
-                languageList.Add(langType.LanguageEnum);                
+            foreach (Type langType in allLanguageTypes) {
+
             }
 
-            Language[] languages = languageList.ToArray();
+            var languages = languageList.ToArray();
             return languages;
         }
 
         private static IWordtype[] DetermineSupportedWordtypes()
         {
-            return (IWordtype[])NonAbstractTypesImplementingInterface(typeof(IWordtype));
+            var enumerable = (IEnumerable<IWordtype>)NonAbstractTypesImplementingInterface(typeof(IWordtype));
+            return enumerable.ToArray();
         }
 
         public static IWordtype[] GetWordTypesOfLanguage(Language language)

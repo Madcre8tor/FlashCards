@@ -2,6 +2,8 @@
 
 namespace FlashCardsLib.German
 {
+
+
     public class German : ILanguage
     {
         public Language LanguageEnum { get => LANGUAGE; }

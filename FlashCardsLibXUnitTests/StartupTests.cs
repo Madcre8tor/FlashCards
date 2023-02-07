@@ -5,7 +5,7 @@ namespace FlashCardsLibXUnitTests
         [Fact]
         public void LoadAllAssemblies()
         {
-            var lang = AppConstants.SUPPORTED_LANGUAGES;
+            var lang = AppConstants.SupportedLanguages;
             Assert.Equal(6, lang.Length);
         }
 

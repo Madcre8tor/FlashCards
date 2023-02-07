@@ -1,5 +1,10 @@
 ﻿namespace FlashCardsLib.English
 {
+
+
+    // Notiz: Versuche Outer-Static class und inner (public) class 
+    // Notiz: static classes können keine Interfaces implementieren
+
     public class English : ILanguage
     {
         public Language LanguageEnum { get => LANGUAGE; }
